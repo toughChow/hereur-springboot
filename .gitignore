@@ -27,3 +27,10 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+/mvnw
+/mvnw.cmd
+/.mvn/
+/.idea/
+/hereur-springboot.iml
+/springboot-web/mvnw
+/springboot-web/mvnw.cmd
