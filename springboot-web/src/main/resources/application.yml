@@ -10,9 +10,24 @@ spring:
     validationQuery: SELECT 1
 
   jpa:
-    database: mysql
-    show-sql: true
     hibernate:
       ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     properties:
-      hibernate.format_sql: true
+      hibernate:
+        format_sql: true
+        cache:
+          use_query_cache: true
+          use_second_level_cache: true
+          provider_configuration_file_resource_path: ehcache.xml
+          region:
+            factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
+      javax:
+        persistence:
+          sharedCache:
+            mode: ENABLE_SELECTIVE
+    cache:
+      type: ehcache
+      ehcache:
+        config: classpath:ehcache/ehcache-spring.xml

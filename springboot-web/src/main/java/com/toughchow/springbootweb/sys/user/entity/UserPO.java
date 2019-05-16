@@ -1,6 +1,8 @@
 package com.toughchow.springbootweb.sys.user.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -9,6 +11,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "t_sys_user")
 @GenericGenerator(name = "jpa-uuid", strategy = "uuid")
+@Cacheable
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "entityCache")
 public class UserPO {
 
     @Id
