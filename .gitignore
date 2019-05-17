@@ -34,3 +34,5 @@ HELP.md
 /hereur-springboot.iml
 /springboot-web/mvnw
 /springboot-web/mvnw.cmd
+/springboot-common/target/
+/springboot-web/target/
