@@ -1,6 +1,6 @@
-package com.toughchow.springbootweb.sys.test.service;
+package com.toughchow.springbootweb.sys.mybatisplus.service;
 
-import com.toughchow.springbootweb.sys.test.entity.UserEntity;
+import com.toughchow.springbootweb.sys.mybatisplus.entity.UserEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -18,4 +18,8 @@ public interface IUserService extends IService<UserEntity> {
     Object reg();
 
     Object find();
+
+    Object page();
+
+    Object updateUser();
 }

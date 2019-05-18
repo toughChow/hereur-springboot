@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.toughchow.springbootweb.sys.test.mapper.UserMapper">
+<mapper namespace="com.toughchow.springbootweb.sys.mybatisplus.mapper.UserMapper">
 
-    <select id="findByName" parameterType="String" resultType="com.toughchow.springbootweb.sys.test.entity.UserEntity">
+    <select id="findByName" parameterType="String" resultType="com.toughchow.springbootweb.sys.mybatisplus.entity.UserEntity">
         SELECT id, password, username
         FROM t_sys_user
         WHERE username = #{name}
+    </select>
+
+    <select id="selectPageVo" resultType="com.toughchow.springbootweb.sys.mybatisplus.entity.UserEntity">
+        SELECT id,username FROM t_sys_user WHERE state=#{state}
     </select>
 </mapper>

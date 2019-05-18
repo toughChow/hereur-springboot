@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @EnableTransactionManagement
 @Configuration
-@MapperScan("com.toughchow.springbootweb.sys.test.mapper")
+@MapperScan("com.toughchow.springbootweb.sys.*.mapper")
 public class MyBatisPlusConfig {
 
     /**

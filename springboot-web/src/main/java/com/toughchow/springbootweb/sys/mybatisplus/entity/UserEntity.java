@@ -1,9 +1,10 @@
-package com.toughchow.springbootweb.sys.test.entity;
+package com.toughchow.springbootweb.sys.mybatisplus.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.io.Serializable;
+import java.util.Date;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -31,5 +32,12 @@ private static final long serialVersionUID=1L;
 
     private String username;
 
+    private Integer state;
+
+    @TableField(fill = FieldFill.INSERT)
+    private Date createTime;
+
+    @TableField(fill = FieldFill.UPDATE)
+    private Date updateTime;
 
 }

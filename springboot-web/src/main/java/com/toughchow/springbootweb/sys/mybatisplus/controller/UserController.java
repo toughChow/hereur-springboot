@@ -1,14 +1,12 @@
-package com.toughchow.springbootweb.sys.test.controller;
+package com.toughchow.springbootweb.sys.mybatisplus.controller;
 
 
-import com.toughchow.springbootweb.sys.test.service.IUserService;
+import com.toughchow.springbootweb.sys.mybatisplus.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Objects;
 
 /**
  * <p>
@@ -40,6 +38,18 @@ public class UserController {
     public Object find() {
         return userService.find();
     }
+
+    @RequestMapping("/update")
+    public Object update() {
+        return userService.updateUser();
+    }
+
+    @RequestMapping("/page")
+    public Object page() {
+        return userService.page();
+    }
+
+
 
 }
 
