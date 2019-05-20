@@ -1,6 +1,7 @@
 package com.toughchow.springbootweb;
 
 import com.toughchow.springbootcommon.redis.RedisUtil;
+import com.toughchow.springbootcommon.redis.publisher.PublisherService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +15,12 @@ public class SpringbootWebApplicationTests {
     @Autowired
     RedisUtil redisUtil;
 
+    @Autowired
+    PublisherService publisherService;
+
     @Test
     public void contextLoads() {
-        boolean set = redisUtil.set("tough", "test");
-        System.out.println(set);
-        Object tough = redisUtil.get("tough");
-        System.out.println(tough);
+        publisherService.pushMsg("hello tough");
     }
 
 }
