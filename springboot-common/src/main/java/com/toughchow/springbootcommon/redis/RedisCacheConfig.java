@@ -29,8 +29,8 @@ public class RedisCacheConfig {
     public RedisCacheManager redisCacheConfig(RedisConnectionFactory redisConnectionFactory) {
         RedisCacheConfiguration configuration = RedisCacheConfiguration.defaultCacheConfig()
             .entryTtl(Duration.ofSeconds(60)) //60s缓存失效
-            .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(keySerializer())) // 设置key的序列化方式
-            .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(valueSerializer()))// 设置value的序列化方式
+            .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(kyroSerializer())) // 设置key的序列化方式
+            .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(kyroSerializer()))// 设置value的序列化方式
             .disableCachingNullValues();
 
         // 获取redis缓存管理类
@@ -64,5 +64,11 @@ public class RedisCacheConfig {
     // value值序列化方式
     private GenericJackson2JsonRedisSerializer valueSerializer(){
         return new GenericJackson2JsonRedisSerializer();
+    }
+
+    // 使用kyro序列化
+    private RedisSerializer<String> kyroSerializer() {
+        // KryoRedisSerializer 替换默认序列化
+        return new KryoRedisSerializer(Object.class);
     }
 }

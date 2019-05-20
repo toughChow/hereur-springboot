@@ -18,7 +18,8 @@ public class SpringbootWebApplicationTests {
     public void contextLoads() {
         boolean set = redisUtil.set("tough", "test");
         System.out.println(set);
-        redisUtil.del("tough");
+        Object tough = redisUtil.get("tough");
+        System.out.println(tough);
     }
 
 }
