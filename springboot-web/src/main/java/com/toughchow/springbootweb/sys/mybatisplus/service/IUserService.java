@@ -1,6 +1,6 @@
 package com.toughchow.springbootweb.sys.mybatisplus.service;
 
-import com.toughchow.springbootweb.sys.mybatisplus.entity.UserEntity;
+import com.toughchow.springbootcommon.mybatis.entity.UserEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

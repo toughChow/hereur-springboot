@@ -127,7 +127,7 @@ public class MysqlGenerator {
 //        strategy.setSuperEntityClass("com.toughchow.springbootweb.common.BaseEntity");
 //        strategy.setSuperControllerClass("com.toughchow.springbootweb.common.BaseController");
         strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
-        strategy.setTablePrefix("t_sys");
+        strategy.setTablePrefix("t_"); //todo
         strategy.setSuperEntityColumns("id");
         strategy.setControllerMappingHyphenStyle(true);
 //        strategy.setTablePrefix(pc.getModuleName());

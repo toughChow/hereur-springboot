@@ -1,4 +1,4 @@
-package com.toughchow.springbootweb.sys.mybatisplus.entity;
+package com.toughchow.springbootcommon.mybatis.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 

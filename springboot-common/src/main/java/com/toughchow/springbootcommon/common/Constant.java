@@ -9,4 +9,5 @@ package com.toughchow.springbootcommon.common;
 public class Constant {
 
     public static final String CHANNEL = "test_channel";
+    public static final String QUEUE= "product_secondsKill";
 }
