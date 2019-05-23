@@ -36,3 +36,4 @@ HELP.md
 /springboot-web/mvnw.cmd
 /springboot-common/target/
 /springboot-web/target/
+/cache/

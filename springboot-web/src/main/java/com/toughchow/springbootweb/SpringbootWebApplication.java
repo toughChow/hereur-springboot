@@ -1,9 +1,11 @@
 package com.toughchow.springbootweb;
 
-import org.mybatis.spring.annotation.MapperScan;
+import com.toughchow.springbootcommon.netty.NettyServer;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScans;
 
@@ -16,4 +18,8 @@ public class SpringbootWebApplication {
         SpringApplication.run(SpringbootWebApplication.class, args);
     }
 
+    @Bean
+    CommandLineRunner startNettySocket() {
+        return args -> new NettyServer().start();
+    }
 }

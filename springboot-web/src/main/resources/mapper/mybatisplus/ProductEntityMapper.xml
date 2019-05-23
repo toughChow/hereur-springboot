@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.toughchow.springbootcommon.mybatis.mapper.ProductMapper">
+
+    <update id="updateQuanrityByPid" parameterType="java.util.Map">
+        update t_product p set p.quantity = #{quantity} where p.id = #{id};
+    </update>
+
+</mapper>
